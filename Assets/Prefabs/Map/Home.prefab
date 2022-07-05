@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7103219788098407920}
   - component: {fileID: 4759178905288078004}
+  - component: {fileID: 1932926321001039079}
   m_Layer: 0
   m_Name: Home
-  m_TagString: Untagged
+  m_TagString: Home
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -1796155064, guid: e81d3d72ae0bd0240ada0872841ea548, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -84,3 +85,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1932926321001039079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153666693752069684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f0e3d8a3ef13264daeb23b4c572e681, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BrokenSprite: {fileID: 1378057624, guid: e81d3d72ae0bd0240ada0872841ea548, type: 3}

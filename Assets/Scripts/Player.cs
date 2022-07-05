@@ -6,11 +6,16 @@ public class Player : MonoBehaviour{
     //属性值
     public float moveSpeed = 3;
     private Vector3 bulletEulerAngles;
+    private float timeVal;  // 攻击时间间隔
+    private float defendTimeVal = 5;
+    private bool isDefend = true;
 
     //引用
     private SpriteRenderer sr;
     public Sprite[] tankSprite; // 上 右 下 左
     public GameObject bulletPrefab;
+    public GameObject explosionPrefab;
+    public GameObject defendEffectPrefab;
 
     private void Awake(){
         sr = GetComponent<SpriteRenderer>();
@@ -19,7 +24,20 @@ public class Player : MonoBehaviour{
     }
 
     void Update(){
-        Attack();
+        if(timeVal>=0.4f){
+            Attack();
+        }else{
+            timeVal += Time.deltaTime;
+        }
+
+        if(isDefend){
+            defendEffectPrefab.SetActive(true);
+            defendTimeVal -= Time.deltaTime;
+            if(defendTimeVal <= 0){
+                defendEffectPrefab.SetActive(false);
+                isDefend = false;
+            }
+        }
     }
     void FixedUpdate(){
         Move();
@@ -59,7 +77,21 @@ public class Player : MonoBehaviour{
     private void Attack(){
         if(Input.GetKeyDown(KeyCode.Space)){
             Instantiate(bulletPrefab,transform.position,Quaternion.Euler(transform.eulerAngles+bulletEulerAngles));
+            timeVal = 0;
         }
+    }
+    private void Die(){
+        // 无敌
+        if(isDefend) return;
+
+        // 产生爆炸特效
+        Instantiate(explosionPrefab,transform.position,transform.rotation);
+        // 死亡
+        Destroy(gameObject);
+    }
+
+    private void Born(){
+
     }
 
 }
