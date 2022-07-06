@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float moveSpeed = 10;
-    private bool isPlayBullet = true;
+    public bool isPlayBullet;
     void Start()
     {
     } 
@@ -29,7 +29,11 @@ public class Bullet : MonoBehaviour
                 Destroy(gameObject);
                 break;
             case "Enemy":
-                Destroy(gameObject);
+                // 只有玩家的子弹能打死敌人
+                if(isPlayBullet){
+                    collision.SendMessage("Die");
+                    Destroy(gameObject);
+                }
                 break;
             case "Wall":
                 Destroy(collision.gameObject);
