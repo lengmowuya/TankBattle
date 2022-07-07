@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3130903802227980670}
   - component: {fileID: 3130903802227980671}
   - component: {fileID: 1464316785978386602}
+  - component: {fileID: -3159422190910132937}
   m_Layer: 0
   m_Name: Stone
   m_TagString: Barrier
@@ -111,3 +112,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.32, y: 0.32}
   m_EdgeRadius: 0
+--- !u!114 &-3159422190910132937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3130903802227980668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5fcad2c30bbfc241b12a6f37d4583d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitAudio: {fileID: 8300000, guid: 50300ee9c0208744cbfd15486777f40a, type: 3}

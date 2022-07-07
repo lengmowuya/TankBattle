@@ -98,7 +98,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f0e3d8a3ef13264daeb23b4c572e681, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionPrefab: {fileID: 3986938013854940826, guid: adc26407ba6d0c44b8083b0ce30777cb, type: 3}
   BrokenSprite: {fileID: 1378057624, guid: e81d3d72ae0bd0240ada0872841ea548, type: 3}
+  dieAudio: {fileID: 8300000, guid: 41660860d05dbdf49b3c8da6332a4ef9, type: 3}
 --- !u!61 &408797946
 BoxCollider2D:
   m_ObjectHideFlags: 0

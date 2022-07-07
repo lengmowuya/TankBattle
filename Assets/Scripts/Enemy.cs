@@ -38,20 +38,24 @@ public class Enemy : MonoBehaviour{
     }
     // 坦克移动和转向
     private void Move(){
-        if(changeDirTimeVal >= 4){
+        if(changeDirTimeVal >= 2){
             int num = Random.Range(0,8);
             if(num>5){
+                // 朝下
                 v = -1;
                 h = 0;
             }else if(num == 0){
+                // 朝上
                 v = 1;
                 h = 0;
             }else if(num>0&&num<=2){
+                // 朝左
                 h = -1;
                 v = 0;
             }else if(num>2&&num<=4){
+                // 朝右
                 h = 1;
-                h = 0;
+                v = 0;
             }
             changeDirTimeVal = 0;
         }else{
@@ -96,10 +100,13 @@ public class Enemy : MonoBehaviour{
         Instantiate(explosionPrefab,transform.position,transform.rotation);
         // 死亡
         Destroy(gameObject);
+        PlayerManager.Instance.playerScore ++;
     }
 
-    private void Born(){
-
+    private void OnCollisionEnter2D(Collision2D collision){
+        if(collision.gameObject.tag == "Enemy"){
+            changeDirTimeVal = 2;
+        }
     }
 
 }
